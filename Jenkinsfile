@@ -56,7 +56,7 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                bat 'g++ scientifc.cpp -o a.exe'
+                bat 'g++ main.cpp -o a.exe'
                 bat 'a.exe'
 
                 sh """
