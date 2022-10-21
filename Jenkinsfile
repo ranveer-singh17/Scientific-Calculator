@@ -43,12 +43,7 @@ pipeline {
 
     }
     post{
-         stage('Cleanup Workspace') {
-            steps {
-                cleanWs(cleanWhenNotBuilt: false)
-                bat 'echo Cleaned Up Workspace For Project'
-            }
-        }
+        cleanWs(cleanWhenNotBuilt: false)
         always{
             mail to: "ranveersingh7600454082@gmail.com",
             subject: "Test Email",
