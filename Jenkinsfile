@@ -37,17 +37,17 @@ pipeline {
 
         stage(' Unit Testing') {
             steps {
-                sh """
+                bat '
                 echo "Running Unit Tests"
-                """
+                '
             }
         }
 
         stage('Code Analysis') {
             steps {
-                sh """
+                bat '
                 echo "Running Code Analysis"
-                """
+                '
             }
         }
 
@@ -59,9 +59,9 @@ pipeline {
                 bat 'g++ main.cpp -o a.exe'
                 bat 'a.exe'
 
-                sh """
+                bat '
                 echo "Deploying Code"
-                """
+                '
             }
         }
 
