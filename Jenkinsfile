@@ -7,21 +7,13 @@ pipeline {
         }
     }
 
-    options {
-        buildDiscarder logRotator( 
-                    daysToKeepStr: '16', 
-                    numToKeepStr: '10'
-            )
-    }
 
     stages {
         
         stage('Cleanup Workspace') {
             steps {
                 cleanWs()
-                bat '
-                echo "Cleaned Up Workspace For Project"
-                '
+                bat 'echo Cleaned Up Workspace For Project'
             }
         }
 
@@ -37,17 +29,13 @@ pipeline {
 
         stage(' Unit Testing') {
             steps {
-                bat '
-                echo "Running Unit Tests"
-                '
+                bat 'echo Running Unit Tests'
             }
         }
 
         stage('Code Analysis') {
             steps {
-                bat '
-                echo "Running Code Analysis"
-                '
+                bat 'echo Running Code Analysis'
             }
         }
 
@@ -59,9 +47,7 @@ pipeline {
                 bat 'g++ main.cpp -o a.exe'
                 bat 'a.exe'
 
-                bat '
-                echo "Deploying Code"
-                '
+                bat 'echo Deploying'
             }
         }
 
