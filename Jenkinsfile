@@ -30,9 +30,9 @@ pipeline {
         }
 
         stage('Build Deploy Code') {
-            when {
-                branch 'develop'
-            }
+//             when {
+//                 branch 'develop'
+//             }
             steps {
                 bat 'g++ main.cpp -o a.exe'
                 bat 'a.exe'
