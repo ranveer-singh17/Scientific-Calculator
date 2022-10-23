@@ -48,7 +48,7 @@ pipeline {
         always{
             mail to: "ranveersingh7600454082@gmail.com",
             subject: "Test Email",
-            body: "Test"
+            body: "Hurray, The wehook is working fine"
         }
     }
 }
