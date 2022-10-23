@@ -38,7 +38,7 @@ pipeline {
                 bat 'a.exe'
 
                 bat 'echo Deploying'
-                bat 'echo webhook working'
+                bat 'echo web-hook working'
             }
         }
 
