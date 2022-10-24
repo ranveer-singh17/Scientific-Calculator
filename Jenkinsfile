@@ -17,9 +17,11 @@ pipeline {
 //             }
 //         }
 
-        stage('SCM') {
-    checkout scm
-  }
+//         stage('SCM') {
+//             steps{
+//                 checkout scm
+//             }
+//   }
 
         stage('Build  Code') {
 //             when {
@@ -41,14 +43,14 @@ pipeline {
                
 //         }
  
-//   stage('SonarQube Analysis') {
-//       steps{
-//     def scannerHome = tool 'SonarScanner';
-//     withSonarQubeEnv() {
-//       bat '${scannerHome}/bin/sonar-scanner'
-//     }
-//     }
-//   }
+  stage('SonarQube Analysis') {
+      steps{
+    def scannerHome = tool 'SonarScanner';
+    withSonarQubeEnv() {
+      bat '${scannerHome}/bin/sonar-scanner'
+    }
+    }
+  }
 
 
 //         stage('Code Analysis') {
