@@ -37,11 +37,11 @@ pipeline {
         }
    
       
-         stage(' Unit Testing') {
-            steps {
-                bat 'echo Running Unit Tests'
+//          stage(' Unit Testing') {
+//             steps {
+//                 bat 'echo Running Unit Tests'
                
-        }
+//         }
  
   stage('SonarQube Analysis') {
       steps{
