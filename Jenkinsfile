@@ -17,19 +17,9 @@ pipeline {
 //             }
 //         }
 
-        stage(' Unit Testing') {
-            steps {
-                bat 'echo Running Unit Tests'
-            }
-        }
+       
 
-        stage('Code Analysis') {
-            steps {
-                bat 'echo Running Code Analysis'
-            }
-        }
-
-        stage('Build Deploy Code') {
+        stage('Build  Code') {
 //             when {
 //                 branch 'develop'
 //             }
@@ -37,10 +27,24 @@ pipeline {
                 bat 'g++ main.cpp -o a.exe'
                 bat 'a.exe'
 
-                bat 'echo Deploying'
-                bat 'echo web-hook working'
+//                 bat 'echo Deploying'
+//                 bat 'echo web-hook working'
             }
         }
+   
+      
+         stage(' Unit Testing') {
+            steps {
+                bat 'echo Running Unit Tests'
+                bat 'sonar-scanner.bat -D"sonar.projectKey=Demo_1" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_61c5b1313f13350d4c46b57b814ba94552b4bc1e"'
+            }
+        }
+
+//         stage('Code Analysis') {
+//             steps {
+//                 bat 'echo Running Code Analysis'
+//             }
+//         }
 
     }
     post{
