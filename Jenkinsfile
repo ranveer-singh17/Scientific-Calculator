@@ -43,14 +43,14 @@ pipeline {
                
         }
  
-//   stage('SonarQube Analysis') {
-//       steps{
-//           def scannerHome = tool 'SonarQube_Jenkins';}
-//       steps{ withSonarQubeEnv() {
-//           bat '${scannerHome}/bin/sonar-scanner'}
-//     }
-//     }
-//   }
+  stage('SonarQube Analysis') {
+      steps{
+          def scannerHome = tool 'Qube';}
+      steps{ withSonarQubeEnv() {
+          bat '${scannerHome}/bin/sonar-scanner'}
+    }
+    }
+  }
 
 
         stage('Code Analysis') {
