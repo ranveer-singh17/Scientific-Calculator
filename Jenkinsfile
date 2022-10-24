@@ -59,7 +59,7 @@ pipeline {
 //             }
 //         }
 
-    }
+    
     post{
         //cleanWs(cleanWhenNotBuilt: false)
         always{
