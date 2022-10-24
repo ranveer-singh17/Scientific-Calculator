@@ -37,27 +37,27 @@ pipeline {
         }
    
       
-//          stage(' Unit Testing') {
-//             steps {
-//                 bat 'echo Running Unit Tests'
+         stage(' Unit Testing') {
+            steps {
+                bat 'echo Running Unit Tests'
                
-//         }
+        }
  
-  stage('SonarQube Analysis') {
-      steps{
-          def scannerHome = tool 'SonarQube_Jenkins';}
-      steps{ withSonarQubeEnv() {
-          bat '${scannerHome}/bin/sonar-scanner'}
-    }
-    }
-  }
+//   stage('SonarQube Analysis') {
+//       steps{
+//           def scannerHome = tool 'SonarQube_Jenkins';}
+//       steps{ withSonarQubeEnv() {
+//           bat '${scannerHome}/bin/sonar-scanner'}
+//     }
+//     }
+//   }
 
 
-//         stage('Code Analysis') {
-//             steps {
-//                 bat 'echo Running Code Analysis'
-//             }
-//         }
+        stage('Code Analysis') {
+            steps {
+                bat 'echo Running Code Analysis'
+            }
+        }
 
     }
     post{
