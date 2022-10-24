@@ -17,7 +17,9 @@ pipeline {
 //             }
 //         }
 
-       
+        stage('SCM') {
+    checkout scm
+  }
 
         stage('Build  Code') {
 //             when {
@@ -33,12 +35,19 @@ pipeline {
         }
    
       
-         stage(' Unit Testing') {
-            steps {
-                bat 'echo Running Unit Tests'
-                bat 'sonar-scanner.bat -D"sonar.projectKey=Demo_1" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_61c5b1313f13350d4c46b57b814ba94552b4bc1e"'
-            }
-        }
+//          stage(' Unit Testing') {
+//             steps {
+//                 bat 'echo Running Unit Tests'
+               
+//         }
+ 
+  stage('SonarQube Analysis') {
+    def scannerHome = tool 'SonarScanner';
+    withSonarQubeEnv() {
+      bat '${scannerHome}/bin/sonar-scanner'
+    }
+  }
+
 
 //         stage('Code Analysis') {
 //             steps {
