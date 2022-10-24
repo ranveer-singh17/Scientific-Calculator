@@ -53,11 +53,11 @@ pipeline {
   }
 
 
-        stage('Code Analysis') {
-            steps {
-                bat 'echo Running Code Analysis'
-            }
-        }
+//         stage('Code Analysis') {
+//             steps {
+//                 bat 'echo Running Code Analysis'
+//             }
+//         }
 
     }
     post{
