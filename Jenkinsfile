@@ -43,11 +43,10 @@ pipeline {
                
 //         }
  
-  stage('SonarQube Analysis') {
+  stage('Analysis') {
       steps{
-//           scannerHome = tool 'Qube';
-//           withSonarQubeEnv() {
-//           bat '${scannerHome}/bin/sonar-scanner'}
+       bat 'FullPathTo/OpenCppCoverage.exe --sources MySource --export_type=cobertura -- MyFile.exe'
+
           bat 'echo Running Code Analysis'
     }
     }
