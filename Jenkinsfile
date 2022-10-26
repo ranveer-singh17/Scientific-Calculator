@@ -28,8 +28,7 @@ pipeline {
 //                 branch 'develop'
 //             }
             steps {
-                bat 'g++ main.cpp -o a.exe'
-                bat 'a.exe'
+                bat 'make'
 
 //                 bat 'echo Deploying'
 //                 bat 'echo web-hook working'
