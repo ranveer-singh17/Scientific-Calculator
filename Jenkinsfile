@@ -40,7 +40,7 @@ pipeline {
                 parallel Unit_Testing:{
                     bat'echo running unit test cases'
                 }, code_analysis:{
-                    bat 'C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe --sources MySource --export_type=cobertura -- output.exe'
+                    // bat 'C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe --sources MySource --export_type=cobertura -- output.exe'
                     },
                     failFast:true
 
