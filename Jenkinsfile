@@ -11,8 +11,8 @@ pipeline {
 //             steps {
 //                 checkout([
 //                     $class: 'GitSCM', 
-//                     branches: [[name: '*/main']], 
-//                     userRemoteConfigs: [[url: 'https://github.com/spring-projects/spring-petclinic.git']]
+//                     branches: [[name: '*/master']], 
+//                     userRemoteConfigs: [[url: 'https://github.com/ranveer-singh17/Scientific-Calculator.git']]
 //                 ])
 //             }
 //         }
@@ -35,29 +35,24 @@ pipeline {
 //                 bat 'echo web-hook working'
             }
         }
+
+        stage('Testing'){
+            steps{
+                parallel Unit_Testing:{
+                    bat'echo running unit test cases'
+                },
+                code_analysis:{
+                    bat'echo running code analysis},
+                    failFast:true
+
+                }
+            }
+        }
+        
    
       
-//          stage(' Unit Testing') {
-//             steps {
-//                 bat 'echo Running Unit Tests'
-               
-//         }
+
  
-  stage('Analysis') {
-      steps{
-       bat 'FullPathTo/OpenCppCoverage.exe --sources MySource --export_type=cobertura -- MyFile.exe'
-
-          bat 'echo Running Code Analysis'
-    }
-    }
-  }
-
-
-//         stage('Code Analysis') {
-//             steps {
-//                 bat 'echo Running Code Analysis'
-//             }
-//         }
 
     
     post{
