@@ -39,7 +39,7 @@ pipeline {
             steps{
                 parallel Unit_Testing:{
                     bat'echo running unit test cases'
-                }, code_analysis:{
+                }, Code_analysis:{
                     bat 'echo running code analysis'
                     // bat 'C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe --sources MySource --export_type=cobertura -- output.exe'
                     },
