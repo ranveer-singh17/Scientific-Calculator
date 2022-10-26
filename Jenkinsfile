@@ -28,7 +28,7 @@ pipeline {
 //                 branch 'develop'
 //             }
             steps {
-                bat 'make build'
+                bat 'mingw32-make'
 
 //                 bat 'echo Deploying'
 //                 bat 'echo web-hook working'
