@@ -66,7 +66,7 @@ pipeline {
         always{
             mail to: "ranveersingh7600454082@gmail.com",
             subject: "Test Email",
-            body: " The webhook is working fine"
+            body: "Hooray, The webhook is working fine"
         }
     }
 }
