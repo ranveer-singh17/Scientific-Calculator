@@ -40,9 +40,9 @@ pipeline {
             steps{
                 parallel Unit_Testing:{
                     bat'echo running unit test cases'
-                },
-                code_analysis:{
-                    bat'echo running code analysis},
+                }, code_analysis:{
+                    bat'echo running code analysis'
+                    },
                     failFast:true
 
                 }
