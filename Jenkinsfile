@@ -28,7 +28,7 @@ pipeline {
 //                 branch 'develop'
 //             }
             steps {
-                bat 'make'
+                bat 'make build'
 
 //                 bat 'echo Deploying'
 //                 bat 'echo web-hook working'
