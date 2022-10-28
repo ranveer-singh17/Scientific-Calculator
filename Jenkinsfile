@@ -61,7 +61,16 @@ pipeline {
         always{
             mail to: "ranveersingh7600454082@gmail.com",
             subject: "Test Email",
-            body: "Hooray, The webhook is working fine"
+            body: success {
+      script {
+        if (currentBuild.getResult().toString() != "SUCCESS") {
+          echo ' successful'
+        }
+	      else{
+		      echo 'unsuccessful'
+	      }
+      }
+    }
         }
     }
 }
