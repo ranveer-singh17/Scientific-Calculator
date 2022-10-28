@@ -29,7 +29,7 @@ pipeline {
 //             }
             steps {
                 bat 'g++ -o output main.cpp'
-		        bat'./output.exe'
+		        bat'output.exe'
 
 //                 bat 'echo Deploying'
 //                 bat 'echo web-hook working'
